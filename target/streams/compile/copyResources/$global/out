@@ -1,0 +1,7 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(E:\ScalaDevelopment\shortURL\conf\application.conf,E:\ScalaDevelopment\shortURL\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(E:\ScalaDevelopment\shortURL\conf\generated.keystore,E:\ScalaDevelopment\shortURL\target\scala-2.10\classes\generated.keystore)[0m
+[0m[[0mdebug[0m] [0m	(E:\ScalaDevelopment\shortURL\conf\messages,E:\ScalaDevelopment\shortURL\target\scala-2.10\classes\messages)[0m
+[0m[[0mdebug[0m] [0m	(E:\ScalaDevelopment\shortURL\conf\play.plugins,E:\ScalaDevelopment\shortURL\target\scala-2.10\classes\play.plugins)[0m
+[0m[[0mdebug[0m] [0m	(E:\ScalaDevelopment\shortURL\conf\prod.conf,E:\ScalaDevelopment\shortURL\target\scala-2.10\classes\prod.conf)[0m
+[0m[[0mdebug[0m] [0m	(E:\ScalaDevelopment\shortURL\conf\routes,E:\ScalaDevelopment\shortURL\target\scala-2.10\classes\routes)[0m

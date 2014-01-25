@@ -1,0 +1,12 @@
+[0m[[0minfo[0m] [0mcontrollerTests.Base62CounterTest[0m
+[0m[[0minfo[0m] [0m+ The counter must be initialized to empty string in the beginning[0m
+[0m[[0minfo[0m] [0m+ The counter must increment to 0 on first call to increment[0m
+[0m[[0minfo[0m] [0m+ The counter must increment to 1 on second call to increment[0m
+[0m[[0minfo[0m] [0m+ The counter must initialize to A when A is passed as initial value[0m
+[0m[[0minfo[0m] [0m+ The counter must incrememnt to B on next call to increment[0m
+[0m[[0minfo[0m] [0m+ The counter must throw an IllegalArgumentException if initialized to null or empty[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mTotal for test controllerTests.Base62CounterTest[0m
+[0m[[0minfo[0m] [0mFinished in 0.019 seconds[0m
+[0m[[0minfo[0m] [0m6 tests, 0 failures, 0 errors[0m

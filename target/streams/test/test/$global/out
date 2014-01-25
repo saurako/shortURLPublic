@@ -1,0 +1,48 @@
+[0m[[0minfo[0m] [0m[32mBase62CounterTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mThe counter[0m[0m
+[0m[[0minfo[0m] [0m[32m- must be initialized to empty string in the beginning[0m[0m
+[0m[[0minfo[0m] [0m[32m- must increment to 0 on first call to increment[0m[0m
+[0m[[0minfo[0m] [0m[32m- must increment to 1 on second call to increment[0m[0m
+[0m[[0minfo[0m] [0m[32m- must initialize to A when A is passed as initial value[0m[0m
+[0m[[0minfo[0m] [0m[32m- must incrememnt to B on next call to increment[0m[0m
+[0m[[0minfo[0m] [0m[32m- must throw an IllegalArgumentException if initialized to null or empty[0m[0m
+[0m[[0minfo[0m] [0m[32mApplicationSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mApplication[0m[0m
+[0m[[0minfo[0m] [0m[32m- should send 404 on a bad request[0m[0m
+[0m[[0minfo[0m] [0m[32m- should render the index page[0m[0m
+[0m[[0minfo[0m] [0m[31m- should shorten a url *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  java.util.NoSuchElementException: None.get[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.None$.get(Option.scala:313)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.None$.get(Option.scala:311)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllers.Application$$anonfun$shorten$1.apply(Application.scala:33)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at controllers.Application$$anonfun$shorten$1.apply(Application.scala:32)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:221)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:220)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$.invokeBlock(Action.scala:357)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:309)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return an already existing url id[0m[0m
+[0m[[0minfo[0m] [0m[31m- must redirect to url *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  Some(http://www.google.com) did not equal Some(http://netflix.com) (ApplicationControllerTest.scala:87)[0m[0m
+[0m[[0mdebug[0m] [0mFramework implementation 'org.specs2.runner.Specs2Framework' not present.[0m
+[0m[[0minfo[0m] [0mIntegrationSpec[0m
+[0m[[0minfo[0m] [0mTotal for specification IntegrationSpec[0m
+[0m[[0minfo[0m] [0m[34mFinished in 3 ms[0m[0m
+[0m[[0minfo[0m] [0m[34m0 example, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mScalaTest[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 3 seconds, 722 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 11[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 2, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 9, failed 2, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[31m*** 2 TESTS FAILED ***[0m[0m
+[0m[[0mdebug[0m] [0mSummary for JUnit not available.[0m
+[0m[[0mdebug[0m] [0mSummary for specs2 not available.[0m
+[0m[[31merror[0m] [0mFailed: Total 11, Failed 2, Errors 0, Passed 9[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	controllerTests.Base62CounterTest[0m
+[0m[[0mdebug[0m] [0m	test.IntegrationSpec[0m
+[0m[[31merror[0m] [0mFailed tests:[0m
+[0m[[31merror[0m] [0m	test.ApplicationSpec[0m
+[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

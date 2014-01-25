@@ -1,0 +1,21 @@
+application.copyright = Copyright © 2013 - 2014, orle.in
+
+application.description = Orle.in is a URL shortner that allows you to shorten and share links easily.
+application.pagetitle = orle.in
+application.pagetitlestage = alpha
+application.title = Plain vanilla URL shortening
+
+
+application.labelForURLBox = Have a long URL to share? Paste it, shorten it and share it!
+application.shortenButtonText = Shorten
+application.customcode = Get a custom tag (optional):
+application.customcodeformat = Tag with letters, numbers or underscores.
+
+application.shortText =  
+application.clicksText = Clicks so far: 
+
+application.orledomainurlerror = You cannot shorten an orle.in link.
+application.invalidurlerror = That is not a valid URL. Try again.
+application.invalidcustomcode = Custom tags can contain only letters, digits and underscores and must be at least 5 characters long.
+
+application.orledomainurl = http://orle.in/_

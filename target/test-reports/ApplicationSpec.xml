@@ -1,0 +1,500 @@
+<testsuite hostname="Sharda-PC" name="test.ApplicationSpec" tests="5" errors="2" failures="2" skipped="0" time="1.854">
+        <properties>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/><property name="sun.boot.library.path" value="C:\Java\jre7\bin"/><property name="java.vm.version" value="23.25-b01"/><property name="java.vm.vendor" value="Oracle Corporation"/><property name="java.vendor.url" value="http://java.oracle.com/"/><property name="path.separator" value=";"/><property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/><property name="file.encoding.pkg" value="sun.io"/><property name="user.country" value="US"/><property name="user.script" value=""/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="sun.os.patch.level" value="Service Pack 1"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="user.dir" value="E:\ScalaDevelopment\shortURL"/><property name="java.runtime.version" value="1.7.0_25-b17"/><property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/><property name="java.endorsed.dirs" value="C:\Java\jre7\lib\endorsed"/><property name="os.arch" value="amd64"/><property name="java.io.tmpdir" value="C:\Users\Sharda\AppData\Local\Temp\"/><property name="line.separator" value="
+"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="user.variant" value=""/><property name="os.name" value="Windows 7"/><property name="sun.jnu.encoding" value="Cp1252"/><property name="java.library.path" value="C:\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;%SystemRoot%\system32\WindowsPowerShell\v1.0\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Live\Shared;C:\Java\jdk1.7.0_25\bin\;C:\scala\bin;E:\ScalaDevelopment\play-2.2.1;C:\Program Files (x86)\Heroku\bin;C:\Program Files (x86)\git\cmd;C:\Program Files (x86)\sbt\bin;;."/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.class.version" value="51.0"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="os.version" value="6.1"/><property name="user.home" value="C:\Users\Sharda"/><property name="user.timezone" value="America/Los_Angeles"/><property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/><property name="file.encoding" value="Cp1252"/><property name="java.specification.version" value="1.7"/><property name="java.class.path" value="E:\ScalaDevelopment\shortURL\target\scala-2.10\test-classes;E:\ScalaDevelopment\shortURL\target\scala-2.10\classes;E:\ScalaDevelopment\shortURL\lib\postgresql-9.1-901.jdbc4.jar;E:\ScalaDevelopment\play-2.2.1\framework\.\sbt\boot\scala-2.10.2\lib\scala-library.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play_2.10\2.2.1\jars\play_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\sbt-link\2.2.1\jars\sbt-link.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.javassist\javassist\3.18.0-GA\bundles\javassist.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-exceptions\2.2.1\jars\play-exceptions.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\templates_2.10\2.2.1\jars\templates_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.github.scala-incubator.io\scala-io-file_2.10\0.4.2\jars\scala-io-file_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.github.scala-incubator.io\scala-io-core_2.10\0.4.2\jars\scala-io-core_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.jsuereth\scala-arm_2.10\1.3\jars\scala-arm_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-iteratees_2.10\2.2.1\jars\play-iteratees_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.scala-stm\scala-stm_2.10\0.7\jars\scala-stm_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe\config\1.0.2\bundles\config.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-json_2.10\2.2.1\jars\play-json_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-functional_2.10\2.2.1\jars\play-functional_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-datacommons_2.10\2.2.1\jars\play-datacommons_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\joda-time\joda-time\2.2\jars\joda-time.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.joda\joda-convert\1.3.1\jars\joda-convert.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.fasterxml.jackson.core\jackson-annotations\2.2.2\jars\jackson-annotations.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.fasterxml.jackson.core\jackson-core\2.2.2\jars\jackson-core.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.fasterxml.jackson.core\jackson-databind\2.2.2\jars\jackson-databind.jar;E:\ScalaDevelopment\play-2.2.1\framework\.\sbt\boot\scala-2.10.2\lib\scala-reflect.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\io.netty\netty\3.7.0.Final\bundles\netty.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.netty\netty-http-pipelining\1.1.2\jars\netty-http-pipelining.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.slf4j\slf4j-api\1.7.5\jars\slf4j-api.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.slf4j\jul-to-slf4j\1.7.5\jars\jul-to-slf4j.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.slf4j\jcl-over-slf4j\1.7.5\jars\jcl-over-slf4j.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\ch.qos.logback\logback-core\1.0.13\jars\logback-core.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\ch.qos.logback\logback-classic\1.0.13\jars\logback-classic.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.akka\akka-actor_2.10\2.2.0\jars\akka-actor_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.akka\akka-slf4j_2.10\2.2.0\bundles\akka-slf4j_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.apache.commons\commons-lang3\3.1\jars\commons-lang3.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.ning\async-http-client\1.7.18\jars\async-http-client.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\oauth.signpost\signpost-core\1.2.1.2\jars\signpost-core.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\oauth.signpost\signpost-commonshttp4\1.2.1.2\jars\signpost-commonshttp4.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\commons-logging\commons-logging\1.1.1\jars\commons-logging.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\xerces\xercesImpl\2.11.0\jars\xercesImpl.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\xml-apis\xml-apis\1.4.01\jars\xml-apis.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\javax.transaction\jta\1.1\jars\jta.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-jdbc_2.10\2.2.1\jars\play-jdbc_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.jolbox\bonecp\0.8.0.RELEASE\bundles\bonecp.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.google.guava\guava\14.0.1\bundles\guava.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.h2database\h2\1.3.172\jars\h2.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\tyrex\tyrex\1.0.1\jars\tyrex.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\anorm_2.10\2.2.1\jars\anorm_2.10.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\postgresql\postgresql\jars\postgresql-9.1-901.jdbc4.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\se.radley\play-plugins-salat_2.10\jars\play-plugins-salat_2.10-1.3.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\com.novus\salat-util_2.10\jars\salat-util_2.10-1.9.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.scala-lang\scalap\jars\scalap-2.10.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\.\sbt\boot\scala-2.10.2\lib\scala-compiler.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\com.novus\salat-core_2.10\jars\salat-core_2.10-1.9.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.mongodb\casbah-core_2.10\jars\casbah-core_2.10-2.6.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.mongodb\casbah-commons_2.10\jars\casbah-commons_2.10-2.6.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\com.github.nscala-time\nscala-time_2.10\jars\nscala-time_2.10-0.2.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.mongodb\mongo-java-driver\jars\mongo-java-driver-2.11.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.mongodb\casbah-query_2.10\jars\casbah-query_2.10-2.6.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.json4s\json4s-native_2.10\jars\json4s-native_2.10-3.1.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.json4s\json4s-core_2.10\jars\json4s-core_2.10-3.1.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.json4s\json4s-ast_2.10\jars\json4s-ast_2.10-3.1.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\com.thoughtworks.paranamer\paranamer\jars\paranamer-2.5.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.mongodb\casbah-gridfs_2.10\jars\casbah-gridfs_2.10-2.6.2.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\net.glxn\qrgen\jars\qrgen-1.3.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\com.google.zxing\javase\jars\javase-2.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\com.google.zxing\core\jars\core-2.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.clapper\grizzled-scala_2.10\jars\grizzled-scala_2.10-1.1.4.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\jline\jline\jars\jline-2.6.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.typesafe.play\play-test_2.10\2.2.1\jars\play-test_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\junit\junit\4.11\jars\junit.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.hamcrest\hamcrest-core\1.3\jars\hamcrest-core.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.specs2\specs2_2.10\2.1.1\jars\specs2_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.scalaz\scalaz-core_2.10\7.0.2\bundles\scalaz-core_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.scalaz\scalaz-concurrent_2.10\7.0.2\bundles\scalaz-concurrent_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.scalaz\scalaz-effect_2.10\7.0.2\bundles\scalaz-effect_2.10.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.novocode\junit-interface\0.10\jars\junit-interface.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.scala-tools.testing\test-interface\0.5\jars\test-interface.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\com.google.code.findbugs\jsr305\2.0.1\jars\jsr305.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.fluentlenium\fluentlenium-festassert\0.8.0\jars\fluentlenium-festassert.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.fluentlenium\fluentlenium-core\0.8.0\jars\fluentlenium-core.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-java\2.32.0\jars\selenium-java.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-android-driver\2.32.0\jars\selenium-android-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-remote-driver\2.32.0\jars\selenium-remote-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\cglib\cglib-nodep\2.1_3\jars\cglib-nodep.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.json\json\20080701\jars\json.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-api\2.32.0\jars\selenium-api.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.apache.httpcomponents\httpclient\4.2.1\jars\httpclient.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.apache.httpcomponents\httpcore\4.2.1\jars\httpcore.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\commons-codec\commons-codec\1.6\jars\commons-codec.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.apache.commons\commons-exec\1.1\jars\commons-exec.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\net.java.dev.jna\jna\3.4.0\jars\jna.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\net.java.dev.jna\platform\3.4.0\jars\platform.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-chrome-driver\2.32.0\jars\selenium-chrome-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-htmlunit-driver\2.32.0\jars\selenium-htmlunit-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\net.sourceforge.htmlunit\htmlunit\2.12\jars\htmlunit.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\xalan\xalan\2.7.1\jars\xalan.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\xalan\serializer\2.7.1\jars\serializer.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\commons-collections\commons-collections\3.2.1\jars\commons-collections.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.apache.httpcomponents\httpmime\4.2.3\jars\httpmime.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\net.sourceforge.htmlunit\htmlunit-core-js\2.12\jars\htmlunit-core-js.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\net.sourceforge.nekohtml\nekohtml\1.9.18\jars\nekohtml.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\net.sourceforge.cssparser\cssparser\0.9.9\jars\cssparser.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.w3c.css\sac\1.3\jars\sac.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\commons-io\commons-io\2.2\jars\commons-io.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.eclipse.jetty\jetty-websocket\8.1.9.v20130131\jars\jetty-websocket.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.eclipse.jetty\jetty-util\8.1.9.v20130131\jars\jetty-util.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.eclipse.jetty\jetty-io\8.1.9.v20130131\jars\jetty-io.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.eclipse.jetty\jetty-http\8.1.9.v20130131\jars\jetty-http.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-firefox-driver\2.32.0\jars\selenium-firefox-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-ie-driver\2.32.0\jars\selenium-ie-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-iphone-driver\2.32.0\jars\selenium-iphone-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-safari-driver\2.32.0\jars\selenium-safari-driver.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.webbitserver\webbit\0.4.14\jars\webbit.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.seleniumhq.selenium\selenium-support\2.32.0\jars\selenium-support.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.easytesting\fest-assert\1.4\jars\fest-assert.jar;E:\ScalaDevelopment\play-2.2.1\repository\local\org.easytesting\fest-util\1.1.6\jars\fest-util.jar;E:\ScalaDevelopment\play-2.2.1\framework\..\repository\cache\org.scalatest\scalatest_2.10\jars\scalatest_2.10-2.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\.\sbt\boot\scala-2.10.2\org.scala-sbt\sbt\0.13.0\test-agent-0.13.0.jar;E:\ScalaDevelopment\play-2.2.1\framework\.\sbt\boot\scala-2.10.2\org.scala-sbt\sbt\0.13.0\test-interface-1.0.jar"/><property name="user.name" value="Sharda"/><property name="java.vm.specification.version" value="1.7"/><property name="sun.java.command" value="sbt.ForkMain 57614"/><property name="java.home" value="C:\Java\jre7"/><property name="sun.arch.data.model" value="64"/><property name="user.language" value="en"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="awt.toolkit" value="sun.awt.windows.WToolkit"/><property name="java.vm.info" value="mixed mode"/><property name="java.version" value="1.7.0_25"/><property name="java.ext.dirs" value="C:\Java\jre7\lib\ext;C:\Windows\Sun\Java\lib\ext"/><property name="sun.boot.class.path" value="C:\Java\jre7\lib\resources.jar;C:\Java\jre7\lib\rt.jar;C:\Java\jre7\lib\sunrsasign.jar;C:\Java\jre7\lib\jsse.jar;C:\Java\jre7\lib\jce.jar;C:\Java\jre7\lib\charsets.jar;C:\Java\jre7\lib\jfr.jar;C:\Java\jre7\classes"/><property name="java.vendor" value="Oracle Corporation"/><property name="file.separator" value="\"/><property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.cpu.endian" value="little"/><property name="sun.desktop" value="windows"/><property name="sun.cpu.isalist" value="amd64"/>
+      </properties>
+        <testcase name="Application should::shorten a url" classname="test.ApplicationSpec" time="0.237">
+        <error message="None.get" type="java.util.NoSuchElementException">controllers.Application$$anonfun$shorten$1.apply(Application.scala:33)
+controllers.Application$$anonfun$shorten$1.apply(Application.scala:32)
+play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:221)
+play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:220)
+play.api.mvc.Action$.invokeBlock(Action.scala:357)
+play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:309)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109)
+play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:108)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:107)
+play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:107)
+play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:100)
+play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:481)
+play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:481)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:517)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:517)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:494)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:494)
+akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)</error>
+      </testcase><testcase name="Application should::return an already existing url id" classname="test.ApplicationSpec" time="0.047">
+        <error message="None.get" type="java.util.NoSuchElementException">controllers.Application$$anonfun$shorten$1.apply(Application.scala:33)
+controllers.Application$$anonfun$shorten$1.apply(Application.scala:32)
+play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:221)
+play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:220)
+play.api.mvc.Action$.invokeBlock(Action.scala:357)
+play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:309)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109)
+play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:108)
+play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:107)
+play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:107)
+play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:100)
+play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:481)
+play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:481)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:517)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:517)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:494)
+play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:494)
+akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42)
+akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386)</error>
+      </testcase><testcase name="Application should::redirect to url" classname="test.ApplicationSpec" time="0.289">
+        <failure message="'Some(http://www.google.com)' is not equal to 'Some(http://netflix.com)'" type="java.lang.Exception">test.ApplicationSpec$$anonfun$2$$anonfun$apply$25$$anonfun$apply$26.apply(ApplicationSpec.scala:89)
+test.ApplicationSpec$$anonfun$2$$anonfun$apply$25$$anonfun$apply$26.apply(ApplicationSpec.scala:85)
+play.api.test.PlayRunners$class.running(Helpers.scala:45)
+play.api.test.Helpers$.running(Helpers.scala:364)
+test.ApplicationSpec$$anonfun$2$$anonfun$apply$25.apply(ApplicationSpec.scala:85)
+test.ApplicationSpec$$anonfun$2$$anonfun$apply$25.apply(ApplicationSpec.scala:85)</failure>
+      </testcase><testcase name="Application should::send 404 on a bad request" classname="test.ApplicationSpec" time="1.170">
+        
+      </testcase><testcase name="Application should::render the index page" classname="test.ApplicationSpec" time="0.108">
+        <failure message="'
+
+
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+    	&lt;meta charset=&quot;UTF-8&quot;&gt;
+    	&lt;meta name=&quot;description&quot; content=&quot;Orle.in is a URL shortner that allows you to shorten and share links easily.&quot;&gt;		
+		&lt;meta itemprop=&quot;image&quot; content=&quot;/images/grle-favicon.png&quot;&gt;
+        &lt;title&gt;orle.in&lt;/title&gt;
+        
+        &lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;/assets/stylesheets/main.css&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;/assets/fonts/typicons-2-0/font/typicons.min.css&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;/assets/stylesheets/liveurl.css&quot;&gt;
+        
+        &lt;link rel=&quot;shortcut icon&quot; type=&quot;image/png&quot; href=&quot;/assets/images/grle-favicon.png&quot;&gt;
+        
+        &lt;script src=&quot;/assets/javascripts/jquery-1.9.0.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;/assets/javascripts/spin.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;/assets/javascripts/jquery.liveurl.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    	&lt;header&gt;
+    		&lt;img src=&quot;/assets/images/grle-logo-small.png&quot;/&gt;    		
+    		 orle.in
+    		 &lt;sup&gt;alpha&lt;/sup&gt;   		    				
+    	&lt;/header&gt;
+            
+    &lt;section class=&quot;mainContent&quot;&gt;    	 
+    	
+    	&lt;div class=&quot;urlInput&quot;&gt;
+    		&lt;div class=&quot;inputgroup&quot;&gt;
+    			&lt;input type=&quot;text&quot; id=&quot;urlInput&quot; class=&quot;input-text&quot; placeholder=&quot;Have a long URL to share? Paste it, shorten it and share it!&quot;&gt;
+    			&lt;button id=&quot;clearinput&quot; class=&quot;cancel typcn typcn-delete&quot; /&gt;
+    		&lt;/div&gt;    		    	
+    		
+    		&lt;div id=&quot;customcode&quot; class=&quot;customcode&quot;&gt;
+    			Get a custom tag (optional): &lt;span class=&quot;customtagurl&quot;&gt;http://orle.in/_&lt;/span&gt;
+    			&lt;input type=&quot;text&quot; id=&quot;customcodeinput&quot; class=&quot;customcodeinput&quot; placeholder=&quot;Tag with letters, numbers or underscores.&quot; &gt;
+    		&lt;/div&gt;
+    		
+    		&lt;button class= &quot;myButton&quot; id=&quot;shortenButton&quot; shortenURL=&quot;/shorten&quot;&gt;Shorten&lt;/button&gt;
+    	&lt;/div&gt;    
+    	
+    	&lt;div class=&quot;shortinfo&quot; id=&quot;shortinfo&quot;&gt;
+    		&lt;div class=&quot;shortdetails&quot; id=&quot;shortdetails&quot;&gt;
+	   			&lt;div class=&quot;shortenedURL&quot; id=&quot;shortenedURL&quot;&gt;&lt;/div&gt;  
+	   			&lt;div class=&quot;totalClicks&quot; id=&quot;totalClicks&quot;&gt;&lt;/div&gt;
+	   		&lt;/div&gt;
+    		&lt;div class=&quot;error&quot; id=&quot;orleerror&quot;&gt;&lt;/div&gt;
+    		
+	   		
+	   		&lt;div id=&quot;shareMainDiv&quot;&gt;&lt;/div&gt;
+	   		
+	   		
+	   		 		
+	    	&lt;div id=&quot;shortText&quot; shortText=&quot;&quot;&gt;&lt;/div&gt;
+	    	&lt;div id=&quot;clicksText&quot; clicksText=&quot;Clicks so far:&quot;&gt;&lt;/div&gt;
+	    	&lt;div id=&quot;shareittext&quot; data=&quot;application.shareit&quot;&gt;&lt;/div&gt;
+	    	&lt;div id=&quot;orledomain&quot; data=localhost:9000&gt;&lt;/div&gt;
+	    	&lt;div id=&quot;domainerrortext&quot; orledomainerror=&quot;You cannot shorten an orle.in link.&quot; invalidurlerror=&quot;That is not a valid URL. Try again.&quot; invalidcustomcode=&quot;Custom tags can contain only letters, digits and underscores and must be at least 5 characters long.&quot;&lt;/div&gt;
+	
+	   		
+	   		&lt;textarea id=&quot;urlpreviewtrigger&quot; class=&quot;hidden&quot;&gt;&lt;/textarea&gt;
+	    	&lt;div class=&quot;liveurl-loader&quot;&gt;&lt;/div&gt;
+	    	
+	    	&lt;div class=&quot;liveurl&quot;&gt;
+	            &lt;div class=&quot;close hidden&quot; title=&quot;Close&quot;&gt;&lt;/div&gt;
+	            &lt;div class=&quot;inner&quot;&gt;
+	                &lt;div class=&quot;image&quot;&gt; &lt;/div&gt;
+	                &lt;div class=&quot;details&quot;&gt;
+	                    &lt;div class=&quot;info&quot;&gt;
+	                        &lt;div class=&quot;title&quot;&gt; &lt;/div&gt;
+	                        &lt;div class=&quot;description&quot;&gt; &lt;/div&gt; 
+	                        &lt;div class=&quot;url&quot;&gt; &lt;/div&gt;
+	                    &lt;/div&gt;
+	                &lt;/div&gt;
+	                &lt;div id=&quot;qrcode&quot; class=&quot;qrcode&quot;&gt;&lt;/div&gt;
+	            &lt;/div&gt;
+	            
+	        &lt;/div&gt;	
+	        
+	        
+        &lt;/div&gt;
+    	
+    &lt;/section&gt;
+    
+    &lt;script&gt;
+    var previousShortenedURL = &quot;&quot;;
+    $(document).ready(function() {
+    	$(&quot;#urlInput&quot;).keypress(
+    		function(event) {
+    			if (event.keyCode == 13) {
+    				shortenURL();
+    			}
+    		});
+    	$(&quot;#clearinput&quot;).click(function (){
+    		$(&quot;#urlInput&quot;).val('');
+    		$(&quot;#customcodeinput&quot;).val('');
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#shortinfo&quot;).hide();
+    		$('.close').trigger('click');
+    		previousShortenedURL=&quot;&quot;;
+    	});
+    	
+    	$(&quot;#orleerror&quot;).hide();
+    	$(&quot;#shortenedURL&quot;).hide();
+    	$(&quot;#shortdetails&quot;).hide();
+
+    	//attach url preview to text area. 
+    	var curImages = new Array();
+
+    	$(&quot;#urlpreviewtrigger&quot;).liveUrl({
+    						loadStart : function() {
+    							$('.liveurl-loader').show();
+    						},
+    						loadEnd : function() {
+    							$('.liveurl-loader').hide();
+    						},
+    						success : function(data) {
+    							var output = $('.liveurl');
+    							output.find('.title').text(data.title);
+    							output.find('.description').text(data.description);
+    							output.find('.url').text(data.url);
+    							output.find('.image').empty();
+    							output.find('.close').one('click',
+    											function() {
+    												var liveUrl = $(this).parent();
+    												liveUrl.hide('fast');
+    												liveUrl.find('.video').html('').hide();
+    												liveUrl.find('.image').html('');
+    												liveUrl.find('.image').hide();
+    												$('textarea').trigger('clear');
+    												curImages = new Array();
+    											});
+    							output.show('fast');
+    						},
+    						addImage : function(image) {
+    							var output = $('.liveurl');
+    							var jqImage = $(image);
+    							jqImage.attr('alt','Preview');
+
+    							if ((image.width / image.height) &gt; 7
+    									|| (image.height / image.width) &gt; 4) {
+    								// we dont want extra large images...
+    								return false;
+    							}
+
+    							curImages.push(jqImage.attr('src'));
+    							output.find('.image').append(jqImage);
+
+    							if (curImages.length == 1) {
+    								// first image...
+    								output.find('.image').show();
+    								jqImage.addClass('active');
+    							}
+
+    							if (curImages.length == 2) {
+    								output.find('.controls .next').removeClass('inactive');
+    							}
+    						}
+    					});
+
+    })
+
+    $(&quot;#shortenButton&quot;).click(function() {	
+    	shortenURL();
+    	
+    });
+
+    					
+
+    function shortenURL() {
+    	if ($(&quot;#urlInput&quot;).val()) {
+    	var opts = {
+    		lines : 7, // The number of lines to draw
+    		length : 0, // The length of each line
+    		width : 10, // The line thickness
+    		radius : 11, // The radius of the inner circle
+    		corners : 1, // Corner roundness (0..1)
+    		rotate : 0, // The rotation offset
+    		direction : 1, // 1: clockwise, -1: counterclockwise
+    		color : '#000', // #rgb or #rrggbb or array of colors
+    		speed : 1, // Rounds per second
+    		trail : 24, // Afterglow percentage
+    		shadow : false, // Whether to render a shadow
+    		hwaccel : false, // Whether to use hardware acceleration
+    		className : 'spinner', // The CSS class to assign to the spinner
+    		zIndex : 2e9, // The z-index (defaults to 2000000000)
+    		top : 'auto', // Top position relative to parent in px
+    		left : 'auto' // Left position relative to parent in px
+    	};
+
+    	var urlToShorten = $(&quot;#urlInput&quot;).val();
+    	
+
+    	//check if the url has http:// or https:// at the beginning. If not, pre-pend http:// by default.
+    	var httpsubstring = urlToShorten.substring(0, 7);
+    	var httpssubstring = urlToShorten.substring(0, 8);
+
+    	if (httpsubstring !== &quot;http://&quot;
+    			&amp;&amp; httpssubstring !== &quot;https://&quot;) {
+    		urlToShorten = &quot;http://&quot; + urlToShorten;
+    	}
+
+    	//verify if the URL is safe it's posted back to generate a short url.
+    	var orledomain = $(&quot;#orledomain&quot;).attr(&quot;data&quot;);
+
+    	if(urlToShorten.toLowerCase().indexOf(orledomain) &gt;=0){
+    		var errortext = $(&quot;#domainerrortext&quot;).attr(&quot;orledomainerror&quot;);
+    		$(&quot;#orleerror&quot;).text(errortext);
+    		$(&quot;#shortinfo&quot;).show();
+    		$(&quot;#orleerror&quot;).show();
+    		$(&quot;#shortdetails&quot;).hide();																
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#shareMainDiv&quot;).hide();
+    		previousShortenedURL = &quot;&quot;;
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#urlpreviewtrigger&quot;).trigger('change');
+    		$('.close').trigger('click');
+    		$(&quot;#qrcodeimage&quot;).remove();
+    		return;
+    	}
+
+    	var links = $.urlHelper.getLinks(urlToShorten);
+    	if(links === null){
+    		var errortext = $(&quot;#domainerrortext&quot;).attr(&quot;invalidurlerror&quot;);
+    		$(&quot;#orleerror&quot;).text(errortext);
+    		$(&quot;#shortinfo&quot;).show();
+    		$(&quot;#orleerror&quot;).show();
+    		$(&quot;#shortdetails&quot;).hide();																
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#shareMainDiv&quot;).hide();
+    		previousShortenedURL = &quot;&quot;;
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#urlpreviewtrigger&quot;).trigger('change');
+    		$('.close').trigger('click');
+    		$(&quot;#qrcodeimage&quot;).remove();
+    		return;
+    	}
+
+    	var customCode = $(&quot;#customcodeinput&quot;).val();
+    	var chk = (/([A-Za-z0-9\_]{1,})/.test(customCode));
+    	
+    	if(customCode !== &quot;&quot; &amp;&amp; !chk){
+    		var errortext = $(&quot;#domainerrortext&quot;).attr(&quot;invalidcustomcode&quot;);
+    		$(&quot;#orleerror&quot;).text(errortext);
+    		$(&quot;#shortinfo&quot;).show();
+    		$(&quot;#orleerror&quot;).show();
+    		$(&quot;#shortdetails&quot;).hide();																
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#shareMainDiv&quot;).hide();
+    		previousShortenedURL = &quot;&quot;;
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$(&quot;#urlpreviewtrigger&quot;).trigger('change');
+    		$('.close').trigger('click');
+    		$(&quot;#qrcodeimage&quot;).remove();
+    		return;
+    	}
+        //We append a &quot;_&quot; to custom code supplied by user, to avoid conflict with the id generated by Base62Counter. Hence a GET should also search for the custom code with a &quot;_&quot; appended.
+    	if(customCode !== &quot;&quot;) {
+        	 customCode = &quot;_&quot; + customCode;
+    	}
+    	
+    	if (urlToShorten !== previousShortenedURL &amp;&amp; links !== null) {
+    		$(&quot;#orleerror&quot;).hide();
+    		$(&quot;#shortdetails&quot;).show();
+    		$(&quot;#shareMainDiv&quot;).show();
+    		$(&quot;#shortenedURL&quot;).html('');
+    		$(&quot;#totalClicks&quot;).html('');
+    		$(&quot;#urlpreviewtrigger&quot;).val('');
+    		$('.close').trigger('click');
+    		$(&quot;#qrcodeimage&quot;).remove();
+
+    		var target = document
+    				.getElementById('shortenedURL');
+    		var spinner = new Spinner(opts).spin(target);
+    		//target.appendChild(spinner.el);
+
+    		var shortenURLPostBack = $(&quot;#shortenButton&quot;).attr(&quot;shortenURL&quot;);
+
+    		previousShortenedURL = urlToShorten;
+
+    		setTimeout(function() {
+    		}, 5000);
+
+    		var getUrl = false;
+    		var dataToSend = new Object();
+    		dataToSend.urlToShorten = urlToShorten;
+    		dataToSend.customCode = customCode;
+    		
+    		//START NEXT AJAX CALL TO POST LONG URL BACK
+    		var hello = &quot;hello&quot;;
+    			$.ajax({
+    					type : &quot;POST&quot;,
+    					url : shortenURLPostBack,
+    					data : JSON.stringify(dataToSend),
+    					dataType : &quot;json&quot;,
+    					contentType : &quot;application/json; charset=utf-8&quot;,
+    					success : function(data) {
+    						$(&quot;#shortinfo&quot;).show();
+    						var link = data.url;
+    						var error = data.error;
+    						if(error != &quot;&quot;) {
+    							$(&quot;#orleerror&quot;).text(error);
+    				    		$(&quot;#orleerror&quot;).show();
+    						}
+        						
+    						var pointsto = data.pointsto;
+    	
+    						var shortText = $(&quot;#shortText&quot;).attr(&quot;shortText&quot;);
+    						var clicksText = $(&quot;#clicksText&quot;).attr(&quot;clicksText&quot;);
+    	
+    						//reset the text and remove the previous share buttons
+    						$(&quot;#shortdetails&quot;).show();
+    						$(&quot;#shortenedURL&quot;).show();
+    						
+    						$(&quot;#shortenedURL&quot;).html(shortText + &quot; &quot;);
+    	
+    						$(&quot;#sharerdiv&quot;).remove();
+    	
+    						var a = $('&lt;div /&gt;');
+    						//a.attr('href', link);
+    						//a.attr('target', '_blank');
+    						$(&quot;#shortenedURL&quot;).text(link);
+    						//$(&quot;#shortenedURL&quot;).append(a);
+    	
+    						var openLinkButton = $('&lt;a /&gt;');																
+    						openLinkButton.attr('id', 'openLinkButton');
+    						openLinkButton.attr('class', 'util typcn typcn-export');
+    						openLinkButton.attr('title', 'Open link');
+    						openLinkButton.attr('href', link);
+    						openLinkButton.attr('target', '_blank');
+    						$(&quot;#shortenedURL&quot;).append(openLinkButton);
+    						
+    						//var openLinkButton = $('&lt;button /&gt;');
+    						//openLinkButton.attr('id', 'openlinkbutton');
+    						//openLinkButton.attr('class', 'util typcn typcn-export-outline');
+    						//$(&quot;#shortenedURL&quot;).append(openLinkButton);		
+    	
+    						var totalClicks = data.clicks;
+    						$(&quot;#totalClicks&quot;).html(clicksText + &quot; &quot;+ totalClicks);
+    	
+    						//generate preview of the url		
+    						//update the value of the text area to trigger preview
+    						$(&quot;#urlpreviewtrigger&quot;).val(urlToShorten);
+    						$(&quot;#urlpreviewtrigger&quot;).trigger('change');
+    						//end of preview.
+    						
+    						//qrcode image
+    						var qrcodeimage = $('&lt;img /&gt;');
+    						var qrcodeurl = &quot;https://chart.googleapis.com/chart?cht=qr&amp;choe=UTF-8&amp;chs=177x177&amp;chl=&quot;+link;
+    						qrcodeimage.attr('id', &quot;qrcodeimage&quot;);
+    						qrcodeimage.attr('src', qrcodeurl);
+    						qrcodeimage.attr('alt', &quot;qrcode&quot;);
+    	
+    						$(&quot;#qrcode&quot;).append(qrcodeimage);
+    						$(&quot;#qrcodeimage&quot;).show();
+    	
+    						//facebook share
+    						var sharerDiv = $('&lt;div /&gt;');
+    						sharerDiv.attr(&quot;id&quot;,&quot;sharerdiv&quot;);
+    						sharerDiv.attr(&quot;class&quot;, &quot;sharerdiv&quot;);
+    	
+    						$(&quot;#shareMainDiv&quot;).append(sharerDiv);
+    	
+    						var facebookLink = $('&lt;button /&gt;'); 
+    						facebookLink.attr(&quot;class&quot;,&quot;share typcn typcn-social-facebook&quot;);
+    						facebookLink.attr(&quot;id&quot;,&quot;facebooksharebutton&quot;);
+    						facebookLink.click(function() {
+    									window.open('https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(link),'_blank');
+    									return false;
+    								});
+    						//facebookLink.html(&quot;f&quot;);
+    	
+    						//twitter share
+    						var twitterLink = $('&lt;button /&gt;');
+    						twitterLink.attr(&quot;class&quot;,&quot;share typcn typcn-social-twitter&quot;);
+    						twitterLink.attr(&quot;id&quot;, &quot;twittersharebutton&quot;);
+    						twitterLink.click(function() {
+    							window.open('http://twitter.com/share?text='+ link +&quot;&amp;url=&quot;,'_blank');
+    							return false;
+    	
+    						});
+    						//twitterLink.html(&quot;t&quot;);
+    	
+    						//google+ share
+    						var googleLink = $('&lt;button /&gt;');
+    						googleLink.attr(&quot;class&quot;,&quot;share google&quot;);
+    						googleLink.attr(&quot;id&quot;, &quot;googlesharebutton&quot;);
+    						googleLink.click(function() {
+    									window.open('https://plus.google.com/share?url='+ encodeURIComponent(link),'_blank');
+    									return false;
+    	
+    								});
+    						googleLink.html(&quot;g+&quot;);
+    	
+    						$(&quot;#sharerdiv&quot;).append(facebookLink);
+    						$(&quot;#sharerdiv&quot;).append(twitterLink);
+    						$(&quot;#sharerdiv&quot;).append(googleLink);
+    	
+    					},
+    					error : function(xhr) {
+    						$(&quot;#shortdetails&quot;).hide();
+    						$(&quot;#shortinfo&quot;).show();
+    						$(&quot;#shortenedURL&quot;).hide();
+    						$(&quot;#orleerror&quot;).text(xhr.responseText);
+    						$(&quot;#orleerror&quot;).show();
+    								
+    						$(&quot;#sharerdiv&quot;).remove();
+    						previousShortenedURL = &quot;&quot;;
+    					}
+    			});
+    		//END AJAX CALL TO POST LONG URL BACK
+    		}
+    	}
+    }
+    &lt;/script&gt;   
+
+        
+        &lt;footer&gt;
+        	Copyright © 2013, orle.in
+        	
+        &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+
+
+' doesn't contain 'Shorten your URLs'" type="java.lang.Exception">test.ApplicationSpec$$anonfun$2$$anonfun$apply$13$$anonfun$apply$14.apply(ApplicationSpec.scala:41)
+test.ApplicationSpec$$anonfun$2$$anonfun$apply$13$$anonfun$apply$14.apply(ApplicationSpec.scala:36)
+play.api.test.PlayRunners$class.running(Helpers.scala:45)
+play.api.test.Helpers$.running(Helpers.scala:364)
+test.ApplicationSpec$$anonfun$2$$anonfun$apply$13.apply(ApplicationSpec.scala:36)
+test.ApplicationSpec$$anonfun$2$$anonfun$apply$13.apply(ApplicationSpec.scala:36)</failure>
+      </testcase>
+        <system-out></system-out>
+        <system-err></system-err>
+      </testsuite>

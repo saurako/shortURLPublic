@@ -1,0 +1,4 @@
+<test.IntegrationSpec-stats timestamp="1389747805109"><stats time="4"></stats></test.IntegrationSpec-stats>
+<test.IntegrationSpec-stats timestamp="1389749039035"><stats time="3"><trend><stats time="3" expectations="-1"></stats></trend></stats></test.IntegrationSpec-stats>
+<test.IntegrationSpec-stats timestamp="1389756511326"><stats time="3"><trend><stats time="3" expectations="-1"></stats></trend></stats></test.IntegrationSpec-stats>
+<test.IntegrationSpec-stats timestamp="1389756818075"><stats time="3"><trend><stats time="3" expectations="-1"></stats></trend></stats></test.IntegrationSpec-stats>

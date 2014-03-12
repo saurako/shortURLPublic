@@ -1,394 +1,60 @@
 @(message: String)
 
-@main("Short URL") {    
-    <section class="mainContent">    	 
-    	
+@main(Messages("application.pagetitle")) {    
+    <section class="mainContent" ng-controller="ShortUrlController" data-ng-init="init()">    	 
     	<div class="urlInput">
-    		<div class="inputgroup">
-    			<input type="text" id="urlInput" class="input-text" placeholder="@Messages("application.labelForURLBox")">
-    			<button id="clearinput" class="cancel typcn typcn-delete" />
-    		</div>    		    	
+    		<input type="text" id="urlInput" class="input-text" placeholder="@Messages("application.labelForURLBox")" ng-model="urlInputModel" ng-enter="shortenURLButtonClick()">
     		
     		<div id="customcode" class="customcode">
     			@Messages("application.customcode") <span class="customtagurl">@Messages("application.orledomainurl")</span>
-    			<input type="text" id="customcodeinput" class="customcodeinput" placeholder="@Messages("application.customcodeformat")" >
+    			<input type="text" id="customcodeinput" class="customcodeinput" placeholder="@Messages("application.customcodeformat")" ng-model="customCodeModel" ng-enter="shortenURLButtonClick()">
     		</div>
     		
-    		<button class= "myButton" id="shortenButton" shortenURL="@routes.Application.shorten">@Messages("application.shortenButtonText")</button>
+    		<button class= "myButton" id="shortenButton" shortenURL="@routes.Application.shorten" ng-click="shortenURLButtonClick()">@Messages("application.shortenButtonText")</button>
     	</div>    
-    	
-    	<div class="shortinfo" id="shortinfo">
+    	<div id="spinnerDiv" class="spinner" ng-show="showSpinner"></div>
+    	<div class="shortinfo" id="shortinfo" ng-show="shortinfoVisible">
     		<div class="shortdetails" id="shortdetails">
-	   			<div class="shortenedURL" id="shortenedURL"></div>  
-	   			<div class="totalClicks" id="totalClicks"></div>
+    			<button id="clearinput" class="cancel typcn typcn-delete" ng-click="closeDetailsDiv()"></button>
+	   			<span class="shortenedURL" ng-bind="shortenedURLText" ng-show="successVisible"></span>
+	   			<a id="openLinkButton" title="Open link" ng-href="{{shortenedURLText}}" target="_blank" ng-show="successVisible" ng-click="updateTotalCLicks()"><span class="util typcn typcn-export"></span></a>
+	   			<div class="totalClicks" ng-show="successVisible">@Messages("application.clicksText")<span ng-bind="totalClicks" id="totalClicks"></span></div> 
 	   		</div>
-    		<div class="error" id="orleerror"></div>
+   			<div class="error" id="orleerror" ng-bind-html="errorHtml" ng-show="orleerrorVisible"></div>
     		
-	   		
-	   		<div id="shareMainDiv"></div>
-	   		
-	   		
-	   		 		
-	    	<div id="shortText" shortText="@Messages("application.shortText")"></div>
-	    	<div id="clicksText" clicksText="@Messages("application.clicksText")"></div>
-	    	<div id="shareittext" data="@Messages("application.shareit")"></div>
-	    	<div id="orledomain" data=@message></div>
-	    	<div id="domainerrortext" orledomainerror="@Messages("application.orledomainurlerror")" invalidurlerror="@Messages("application.invalidurlerror")" invalidcustomcode="@Messages("application.invalidcustomcode")"</div>
-	
+	   		<div id="shareMainDiv" ng-show="successVisible">
+	   			<div id="sharerdiv" class="sharerdiv">
+		   			<button id="facebooksharebutton" class="share facebookLogo typcn typcn-social-facebook" ng-click="facebookButtonClick()"></button>
+					<button id="twittersharebutton" class="share twitterLogo typcn typcn-social-twitter" ng-click="twitterButtonClick()"></button>
+					<button id="googlesharebutton" class="share googleplusLogo typcn typcn-social-google-plus" ng-click="googlePlusButtonClick()"></button>
+				</div>
+	   		</div>
 	   		
 	   		<textarea id="urlpreviewtrigger" class="hidden"></textarea>
 	    	<div class="liveurl-loader"></div>
 	    	
-	    	<div class="liveurl">
-	            <div class="close hidden" title="Close"></div>
-	            <div class="inner">
-	                <div class="image"> </div>
-	                <div class="details">
-	                    <div class="info">
-	                        <div class="title"> </div>
-	                        <div class="description"> </div> 
-	                        <div class="url"> </div>
-	                    </div>
-	                </div>
-	                <div id="qrcode" class="qrcode"></div>
-	            </div>
-	            
-	        </div>	
-	        
-	        
+		    	<div class="liveurl">
+		            <div class="close hidden" title="Close"></div>
+		            <div class="inner">
+		                <div class="image"> </div>
+		                <div class="details">
+		                    <div class="info">
+		                        <div class="title"> </div>
+		                        <div class="description"> </div> 
+		                        <div class="url"> </div>
+		                    </div>
+		                </div>
+						<div id="qrcode" class="qrcode">
+							<div>QR Code</div>
+						</div>
+		            </div>
+		        </div>
+		        
+	   		 		
+	    	<div id="shortText" shortText="@Messages("application.shortText")"></div>
+	    	<div id="shareittext" data="@Messages("application.shareit")"></div>
+	    	<div id="orledomain" data=@message></div>
+	    	<div id="domainerrortext" orledomainerror="@Messages("application.orledomainurlerror")" invalidurlerror="@Messages("application.invalidurlerror")" invalidcustomcode="@Messages("application.invalidcustomcode")"</div>
         </div>
-    	
     </section>
-    
-    <script>
-    var previousShortenedURL = "";
-    $(document).ready(function() {
-    	$("#urlInput").keypress(
-    		function(event) {
-    			if (event.keyCode == 13) {
-    				shortenURL();
-    			}
-    		});
-    	$("#clearinput").click(function (){
-    		$("#urlInput").val('');
-    		$("#customcodeinput").val('');
-    		$("#urlpreviewtrigger").val('');
-    		$("#shortinfo").hide();
-    		$('.close').trigger('click');
-    		previousShortenedURL="";
-    	});
-    	
-    	$("#orleerror").hide();
-    	$("#shortenedURL").hide();
-    	$("#shortdetails").hide();
-
-    	//attach url preview to text area. 
-    	var curImages = new Array();
-
-    	$("#urlpreviewtrigger").liveUrl({
-    						loadStart : function() {
-    							$('.liveurl-loader').show();
-    						},
-    						loadEnd : function() {
-    							$('.liveurl-loader').hide();
-    						},
-    						success : function(data) {
-    							var output = $('.liveurl');
-    							output.find('.title').text(data.title);
-    							output.find('.description').text(data.description);
-    							output.find('.url').text(data.url);
-    							output.find('.image').empty();
-    							output.find('.close').one('click',
-    											function() {
-    												var liveUrl = $(this).parent();
-    												liveUrl.hide('fast');
-    												liveUrl.find('.video').html('').hide();
-    												liveUrl.find('.image').html('');
-    												liveUrl.find('.image').hide();
-    												$('textarea').trigger('clear');
-    												curImages = new Array();
-    											});
-    							output.show('fast');
-    						},
-    						addImage : function(image) {
-    							var output = $('.liveurl');
-    							var jqImage = $(image);
-    							jqImage.attr('alt','Preview');
-
-    							if ((image.width / image.height) > 7
-    									|| (image.height / image.width) > 4) {
-    								// we dont want extra large images...
-    								return false;
-    							}
-
-    							curImages.push(jqImage.attr('src'));
-    							output.find('.image').append(jqImage);
-
-    							if (curImages.length == 1) {
-    								// first image...
-    								output.find('.image').show();
-    								jqImage.addClass('active');
-    							}
-
-    							if (curImages.length == 2) {
-    								output.find('.controls .next').removeClass('inactive');
-    							}
-    						}
-    					});
-
-    })
-
-    $("#shortenButton").click(function() {	
-    	shortenURL();
-    	
-    });
-
-    					
-
-    function shortenURL() {
-    	if ($("#urlInput").val()) {
-    	var opts = {
-    		lines : 7, // The number of lines to draw
-    		length : 0, // The length of each line
-    		width : 10, // The line thickness
-    		radius : 11, // The radius of the inner circle
-    		corners : 1, // Corner roundness (0..1)
-    		rotate : 0, // The rotation offset
-    		direction : 1, // 1: clockwise, -1: counterclockwise
-    		color : '#000', // #rgb or #rrggbb or array of colors
-    		speed : 1, // Rounds per second
-    		trail : 24, // Afterglow percentage
-    		shadow : false, // Whether to render a shadow
-    		hwaccel : false, // Whether to use hardware acceleration
-    		className : 'spinner', // The CSS class to assign to the spinner
-    		zIndex : 2e9, // The z-index (defaults to 2000000000)
-    		top : 'auto', // Top position relative to parent in px
-    		left : 'auto' // Left position relative to parent in px
-    	};
-
-    	var urlToShorten = $("#urlInput").val();
-    	
-
-    	//check if the url has http:// or https:// at the beginning. If not, pre-pend http:// by default.
-    	var httpsubstring = urlToShorten.substring(0, 7);
-    	var httpssubstring = urlToShorten.substring(0, 8);
-
-    	if (httpsubstring !== "http://"
-    			&& httpssubstring !== "https://") {
-    		urlToShorten = "http://" + urlToShorten;
-    	}
-
-    	//verify if the URL is safe it's posted back to generate a short url.
-    	var orledomain = $("#orledomain").attr("data");
-
-    	if(urlToShorten.toLowerCase().indexOf(orledomain) >=0){
-    		var errortext = $("#domainerrortext").attr("orledomainerror");
-    		$("#orleerror").text(errortext);
-    		$("#shortinfo").show();
-    		$("#orleerror").show();
-    		$("#shortdetails").hide();																
-    		$("#urlpreviewtrigger").val('');
-    		$("#shareMainDiv").hide();
-    		previousShortenedURL = "";
-    		$("#urlpreviewtrigger").val('');
-    		$("#urlpreviewtrigger").trigger('change');
-    		$('.close').trigger('click');
-    		$("#qrcodeimage").remove();
-    		return;
-    	}
-
-    	var links = $.urlHelper.getLinks(urlToShorten);
-    	if(links === null){
-    		var errortext = $("#domainerrortext").attr("invalidurlerror");
-    		$("#orleerror").text(errortext);
-    		$("#shortinfo").show();
-    		$("#orleerror").show();
-    		$("#shortdetails").hide();																
-    		$("#urlpreviewtrigger").val('');
-    		$("#shareMainDiv").hide();
-    		previousShortenedURL = "";
-    		$("#urlpreviewtrigger").val('');
-    		$("#urlpreviewtrigger").trigger('change');
-    		$('.close').trigger('click');
-    		$("#qrcodeimage").remove();
-    		return;
-    	}
-
-    	var customCode = $("#customcodeinput").val();
-    	var chk = (/([A-Za-z0-9\_]{1,})/.test(customCode));
-    	
-    	if(customCode !== "" && !chk){
-    		var errortext = $("#domainerrortext").attr("invalidcustomcode");
-    		$("#orleerror").text(errortext);
-    		$("#shortinfo").show();
-    		$("#orleerror").show();
-    		$("#shortdetails").hide();																
-    		$("#urlpreviewtrigger").val('');
-    		$("#shareMainDiv").hide();
-    		previousShortenedURL = "";
-    		$("#urlpreviewtrigger").val('');
-    		$("#urlpreviewtrigger").trigger('change');
-    		$('.close').trigger('click');
-    		$("#qrcodeimage").remove();
-    		return;
-    	}
-        //We append a "_" to custom code supplied by user, to avoid conflict with the id generated by Base62Counter. Hence a GET should also search for the custom code with a "_" appended.
-    	if(customCode !== "") {
-        	 customCode = "_" + customCode;
-    	}
-    	
-    	if (urlToShorten !== previousShortenedURL && links !== null) {
-    		$("#orleerror").hide();
-    		$("#shortdetails").show();
-    		$("#shareMainDiv").show();
-    		$("#shortenedURL").html('');
-    		$("#totalClicks").html('');
-    		$("#urlpreviewtrigger").val('');
-    		$('.close').trigger('click');
-    		$("#qrcodeimage").remove();
-
-    		var target = document
-    				.getElementById('shortenedURL');
-    		var spinner = new Spinner(opts).spin(target);
-    		//target.appendChild(spinner.el);
-
-    		var shortenURLPostBack = $("#shortenButton").attr("shortenURL");
-
-    		previousShortenedURL = urlToShorten;
-
-    		setTimeout(function() {
-    		}, 5000);
-
-    		var getUrl = false;
-    		var dataToSend = new Object();
-    		dataToSend.urlToShorten = urlToShorten;
-    		dataToSend.customCode = customCode;
-    		
-    		//START NEXT AJAX CALL TO POST LONG URL BACK
-    		var hello = "hello";
-    			$.ajax({
-    					type : "POST",
-    					url : shortenURLPostBack,
-    					data : JSON.stringify(dataToSend),
-    					dataType : "json",
-    					contentType : "application/json; charset=utf-8",
-    					success : function(data) {
-    						$("#shortinfo").show();
-    						var link = data.url;
-    						var error = data.error;
-    						if(error != "") {
-    							$("#orleerror").text(error);
-    				    		$("#orleerror").show();
-    						}
-        						
-    						var pointsto = data.pointsto;
-    	
-    						var shortText = $("#shortText").attr("shortText");
-    						var clicksText = $("#clicksText").attr("clicksText");
-    	
-    						//reset the text and remove the previous share buttons
-    						$("#shortdetails").show();
-    						$("#shortenedURL").show();
-    						
-    						$("#shortenedURL").html(shortText + " ");
-    	
-    						$("#sharerdiv").remove();
-    	
-    						var a = $('<div />');
-    						//a.attr('href', link);
-    						//a.attr('target', '_blank');
-    						$("#shortenedURL").text(link);
-    						//$("#shortenedURL").append(a);
-    	
-    						var openLinkButton = $('<a />');																
-    						openLinkButton.attr('id', 'openLinkButton');
-    						openLinkButton.attr('class', 'util typcn typcn-export');
-    						openLinkButton.attr('title', 'Open link');
-    						openLinkButton.attr('href', link);
-    						openLinkButton.attr('target', '_blank');
-    						$("#shortenedURL").append(openLinkButton);
-    						
-    						//var openLinkButton = $('<button />');
-    						//openLinkButton.attr('id', 'openlinkbutton');
-    						//openLinkButton.attr('class', 'util typcn typcn-export-outline');
-    						//$("#shortenedURL").append(openLinkButton);		
-    	
-    						var totalClicks = data.clicks;
-    						$("#totalClicks").html(clicksText + " "+ totalClicks);
-    	
-    						//generate preview of the url		
-    						//update the value of the text area to trigger preview
-    						$("#urlpreviewtrigger").val(urlToShorten);
-    						$("#urlpreviewtrigger").trigger('change');
-    						//end of preview.
-    						
-    						//qrcode image
-    						var qrcodeimage = $('<img />');
-    						var qrcodeurl = "https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=177x177&chl="+link;
-    						qrcodeimage.attr('id', "qrcodeimage");
-    						qrcodeimage.attr('src', qrcodeurl);
-    						qrcodeimage.attr('alt', "qrcode");
-    	
-    						$("#qrcode").append(qrcodeimage);
-    						$("#qrcodeimage").show();
-    	
-    						//facebook share
-    						var sharerDiv = $('<div />');
-    						sharerDiv.attr("id","sharerdiv");
-    						sharerDiv.attr("class", "sharerdiv");
-    	
-    						$("#shareMainDiv").append(sharerDiv);
-    	
-    						var facebookLink = $('<button />'); 
-    						facebookLink.attr("class","share typcn typcn-social-facebook");
-    						facebookLink.attr("id","facebooksharebutton");
-    						facebookLink.click(function() {
-    									window.open('https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(link),'_blank');
-    									return false;
-    								});
-    						//facebookLink.html("f");
-    	
-    						//twitter share
-    						var twitterLink = $('<button />');
-    						twitterLink.attr("class","share typcn typcn-social-twitter");
-    						twitterLink.attr("id", "twittersharebutton");
-    						twitterLink.click(function() {
-    							window.open('http://twitter.com/share?text='+ link +"&url=",'_blank');
-    							return false;
-    	
-    						});
-    						//twitterLink.html("t");
-    	
-    						//google+ share
-    						var googleLink = $('<button />');
-    						googleLink.attr("class","share google");
-    						googleLink.attr("id", "googlesharebutton");
-    						googleLink.click(function() {
-    									window.open('https://plus.google.com/share?url='+ encodeURIComponent(link),'_blank');
-    									return false;
-    	
-    								});
-    						googleLink.html("g+");
-    	
-    						$("#sharerdiv").append(facebookLink);
-    						$("#sharerdiv").append(twitterLink);
-    						$("#sharerdiv").append(googleLink);
-    	
-    					},
-    					error : function(xhr) {
-    						$("#shortdetails").hide();
-    						$("#shortinfo").show();
-    						$("#shortenedURL").hide();
-    						$("#orleerror").text(xhr.responseText);
-    						$("#orleerror").show();
-    								
-    						$("#sharerdiv").remove();
-    						previousShortenedURL = "";
-    					}
-    			});
-    		//END AJAX CALL TO POST LONG URL BACK
-    		}
-    	}
-    }
-    </script>   
 }
